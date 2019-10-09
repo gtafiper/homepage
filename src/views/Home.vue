@@ -5,3 +5,28 @@
 </template>
 
 
+//jrbrj
+
+<script>
+  import axios from 'axios';
+
+  export default {
+    mounted() {
+      this.fetchProducts()
+    },
+    data: () => ({
+      fruits: []
+    }),
+    methods: {
+      fetchProducts() {
+
+        axios.get('http://fruitshop.azurewebsites.net/api/fruits')
+                .then((data) => {
+                  this.fruits = data.data;
+
+                });
+      }
+    }
+  };
+</script>
+
