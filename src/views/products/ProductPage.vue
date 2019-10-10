@@ -30,7 +30,7 @@
                 <template v-slot:badge v-if="messages > 0">{{ messages}}
 
                 </template>
-                <v-btn>
+                <v-btn :to="{name: 'Cart'}">
                   <v-icon left>
                     shopping_cart
                   </v-icon>
@@ -47,8 +47,8 @@
 
             <v-card class="my-5" height="450px">
 
-              <v-img height="450px" width="450px"
-                src="http://www.brigidaneves.com/wp-content/uploads/2015/07/600x800-light.jpg">
+              <v-img height="450px" width="450px" :src="fruits.imgUrl">
+
 
 
               </v-img>

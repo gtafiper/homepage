@@ -37,7 +37,7 @@
                             <template v-slot:badge v-if="messages > 0">{{ messages}}
 
                             </template>
-                            <v-btn>
+                            <v-btn :to="{name: 'Cart'}">
                                 <v-icon left>
                                     shopping_cart
                             </v-icon>

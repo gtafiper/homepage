@@ -2,7 +2,6 @@
   <div id="app">
      <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/ProductPage">View Product</router-link> |
       <router-link to="/Cart">Cart</router-link> |
       <router-link to="/products">Products</router-link> |
       <router-link to="/productCreate">Create new fruit</router-link> |
