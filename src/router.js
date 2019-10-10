@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
 import Products from "./views/products/Products";
+import Cart from "./views/products/Cart";
 import ProductPage from "./views/products/ProductPage";
 import ProductsUpdate from "./views/products/ProductsUpdate";
 import ProductCreate from "./views/products/ProductCreate";
@@ -37,5 +38,10 @@ export default new Router({
       name: 'ProductPage',
       component: ProductPage
     },
+    {
+      path: '/Cart',
+      name: 'Cart',
+      component: Cart
+    }
   ]
 })

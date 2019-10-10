@@ -6,8 +6,8 @@
           <!-- fluid === full width design -->
           <v-row id="header">
             <v-col cols="12" sm="2" id="logo">
-              <div><img src="img/logo.png" height="45" width="56" alt="">
-              </div>
+                <div><img src="" height="45" width="56" alt="">
+                </div>
             </v-col>
             <v-col cols="12" sm="8" id="menu">
               <div class="text-center">
@@ -57,7 +57,7 @@
 
             <v-card id="card1" class="my-5 white lighten-1 black--text" height="450px" width="450px">
               <v-card-title>
-                <span class="display-1">Dragon Fruit</span>
+                <span class="display-1"></span>
               </v-card-title>
               <v-card-text id="cardText">
 
@@ -115,9 +115,11 @@
 <script>
   import axios from 'axios';
 
+
   export default {
     mounted() {
-      this.fetchProducts()
+        const {id} = this.$route.params;
+      this.fetchProducts(id)
     },
     data: () => ({
       fruits: [],
@@ -138,7 +140,7 @@
       ],
     }),
     methods: {
-      fetchProducts() {
+      fetchProducts(id) {
 
         axios.get('http://fruitshop.azurewebsites.net/api/fruits')
                 .then((data) => {

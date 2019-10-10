@@ -262,9 +262,7 @@
         axios.get('http://fruitshop.azurewebsites.net/api/fruits')
                 .then((data) => {
                   this.fruits = data.data;
-                  this.fruits.forEach(fruit => {
-                    fruit.imgUrl = 'https://samvirke.dk/sites/default/files/styles/image_component_large/public/migrated/Os/Ostkalorier_0.jpg.jpeg?itok=6SCyjucP'
-                  })
+                 
                 });
       }
     }
