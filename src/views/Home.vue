@@ -112,9 +112,12 @@
                                     <v-btn text color="orange" class="mx-1" @click="messages++">
                                         Add to cart
                                     </v-btn>
-                                    <v-btn text>
-                                        <router-link id="tt1" to="/ProductPage">View Product</router-link>
-                                    </v-btn>
+                                    <v-btn :to="{
+                                        name: 'ProductPage',
+                                         params: {
+                                            id: fruit.id
+                    }
+                                                }">View Product</v-btn>
                                 </v-card-actions>
                             </v-card>
                             <!--

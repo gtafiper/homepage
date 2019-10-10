@@ -115,7 +115,7 @@
                     price: this.fruits.price,
                     amount: this.fruits.amount,
                     contents: this.fruits.contents,
-                    umgUrl: this.fruits.imgUrl
+                    imgUrl: this.fruits.imgUrl
 
 
                 })
