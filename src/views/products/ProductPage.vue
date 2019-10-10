@@ -57,28 +57,19 @@
 
             <v-card id="card1" class="my-5 white lighten-1 black--text" height="450px" width="450px">
               <v-card-title>
-                <span class="display-1"></span>
+                <span class="display-1">{{fruits.name}}</span>
               </v-card-title>
               <v-card-text id="cardText">
 
                 <li class="mt-18 mb-2">
                   <span class=" headline font-weight-medium black--text">
-                    <p id="priceone">$ 1,20</p> </span>
+                    <p id="priceone">$ {{fruits.price}}</p> </span>
                 </li>
 
                 <v-card id="card_text" height="300px" width="450px" class="mb-max white lighten-1 black--text" flat>
                   <span>
-                    <p1>
-                   Allergens: <br> Can cause anaphylactic reaction if you are allergic to pitaya fruit.</p1>
                     <p>
-                    <br>
-                    The flesh is mildly sweet.
-                    <br> 
-                   The Dragon Fruit is rich in a number of vitamins, minerals, fibers and antioxidants.
-                   <br>
-                   The pitaya fruit is the fruit of the cactus <br> species Hylocereus Undatus.
-                   <br><br>
-                   This exotic fruit is native to Mexico and Central and South America and is also cultivated in Southeast Asian countries.
+                   {{fruits.contents}}
                   </p>
                   </span>
 
@@ -113,41 +104,39 @@
 </template>
 
 <script>
-  import axios from 'axios';
-
+  import restApi from '../../api/api'
 
   export default {
     mounted() {
-        const {id} = this.$route.params;
-      this.fetchProducts(id)
+      const  { id } = this.$route.params;
+      this.fetchProduct(id);
     },
     data: () => ({
-      fruits: [],
-
-      items1: [
-        { title: 'Origin' },
-        { title: 'Recipes' },
-        { title: 'Nutrients' },
-        { title: 'Allergens' },
-      ],
-              links: [
-        'Home',
-        'About Us',
-        'Team',
-        'Services',
-        'Blog',
-        'Contact Us',
-      ],
+      fruits: {},
     }),
-    methods: {
-      fetchProducts(id) {
 
-        axios.get('http://fruitshop.azurewebsites.net/api/fruits')
+
+    links: [
+      'Home',
+      'About Us',
+      'Team',
+      'Services',
+      'Blog',
+      'Contact Us',
+    ],
+
+
+    methods: {
+
+      fetchProduct(id) {
+
+        restApi.get('/fruits/' + id)
                 .then((data) => {
                   this.fruits = data.data;
-
-                });
+                })
       }
+
+
     }
   };
 </script>
