@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
 import Products from "./views/products/Products";
+import ProductPage from "./views/products/ProductPage";
 import ProductsUpdate from "./views/products/ProductsUpdate";
 import ProductCreate from "./views/products/ProductCreate";
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/productCreate',
       name: '/ProductCreate',
       component: ProductCreate
-    }
+    },
+    {
+      path: '/ProductPage',
+      name: 'ProductPage',
+      component: ProductPage
+    },
   ]
 })
