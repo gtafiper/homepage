@@ -25,7 +25,6 @@
                                             <v-list-item
                                               v-for="(item, index) in items1"
                                               :key="index"
-                                              @click=""
                                             >
                                               <v-list-item-title>{{ item.title }}</v-list-item-title>
                                             </v-list-item>
@@ -62,9 +61,9 @@
 
 
 
-                    <v-row id="main">
+                    <v-row id="main" :style="{'background-image': 'url(' + require('@/assets/background.png') + ')'}">
                         <v-col id="products">
-                            <v-card class="my-5 mx-auto" max-width="350">
+                            <!--<v-card class="my-5 mx-auto" max-width="350">
                                 <a href="productpage.html">
                                     <v-img class="white--text" height="350px"
                                         src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
@@ -77,7 +76,7 @@
                                     <v-btn text color="orange" class="mx-1" @click="messages++">
                                         Add to cart
                                     </v-btn>
-                                    <v-btn text>
+                                    <v-btn text >
                                         <a id="tt1" href="productpage.html">View product</a>
                                     </v-btn>
                                 </v-card-actions>
@@ -86,7 +85,44 @@
                                 <a id="tt1" href="productpage.html">
                                     <v-img class="white--text" height="350px"
                                         src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
-                                        <v-card-title class="align-end fill-height">Dragon Fruit
+                                        <v-card-title class="align-end fill-height"> Kumquat
+                                        </v-card-title>
+                                    </v-img>
+                                </a>
+
+                                <v-card-actions>
+                                    <v-btn text color="orange" class="mx-1" @click="messages++">
+                                        Add to cart
+                                    </v-btn>
+                                    <v-btn text>
+                                        <a id="tt1" href="productpage.html">View product</a>
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-card>-->
+                            <v-card class="my-5 mx-auto" max-width="350" v-for="fruit in fruits" v-bind:key="fruit.id">
+                                <a id="tt1" href="/ProductPage">
+                                    <v-img class="white--text" height="350px"
+                                        :src="fruit.imgUrl">
+                                        <v-card-title class="align-end fill-height">{{fruit.name}}
+                                        </v-card-title>
+                                    </v-img>
+                                </a>
+
+                                <v-card-actions>
+                                    <v-btn text color="orange" class="mx-1" @click="messages++">
+                                        Add to cart
+                                    </v-btn>
+                                    <v-btn text>
+                                        <router-link id="tt1" to="/ProductPage">View Product</router-link>
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-card>
+                            <!--
+                            <v-card class="my-5 mx-auto" max-width="350">
+                                <a id="tt1" href="productpage.html">
+                                    <v-img class="white--text" height="350px"
+                                        src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
+                                        <v-card-title class="align-end fill-height">Rambutan
                                         </v-card-title>
                                     </v-img>
                                 </a>
@@ -104,7 +140,7 @@
                                 <a id="tt1" href="productpage.html">
                                     <v-img class="white--text" height="350px"
                                         src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
-                                        <v-card-title class="align-end fill-height">Dragon Fruit
+                                        <v-card-title class="align-end fill-height">Durian
                                         </v-card-title>
                                     </v-img>
                                 </a>
@@ -122,7 +158,7 @@
                                 <a id="tt1" href="productpage.html">
                                     <v-img class="white--text" height="350px"
                                         src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
-                                        <v-card-title class="align-end fill-height">Dragon Fruit
+                                        <v-card-title class="align-end fill-height">Guanabana
                                         </v-card-title>
                                     </v-img>
                                 </a>
@@ -135,43 +171,7 @@
                                         <a id="tt1" href="productpage.html">View product</a>
                                     </v-btn>
                                 </v-card-actions>
-                            </v-card>
-                            <v-card class="my-5 mx-auto" max-width="350">
-                                <a id="tt1" href="productpage.html">
-                                    <v-img class="white--text" height="350px"
-                                        src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
-                                        <v-card-title class="align-end fill-height">Dragon Fruit
-                                        </v-card-title>
-                                    </v-img>
-                                </a>
-
-                                <v-card-actions>
-                                    <v-btn text color="orange" class="mx-1" @click="messages++">
-                                        Add to cart
-                                    </v-btn>
-                                    <v-btn text>
-                                        <a id="tt1" href="productpage.html">View product</a>
-                                    </v-btn>
-                                </v-card-actions>
-                            </v-card>
-                            <v-card class="my-5 mx-auto" max-width="350">
-                                <a id="tt1" href="productpage.html">
-                                    <v-img class="white--text" height="350px"
-                                        src="http://lacasanelverde.it/images/placeholder-350x350.jpg">
-                                        <v-card-title class="align-end fill-height">Dragon Fruit
-                                        </v-card-title>
-                                    </v-img>
-                                </a>
-
-                                <v-card-actions>
-                                    <v-btn text color="orange" class="mx-1" @click="messages++">
-                                        Add to cart
-                                    </v-btn>
-                                    <v-btn text>
-                                        <a id="tt1" href="productpage.html">View product</a>
-                                    </v-btn>
-                                </v-card-actions>
-                            </v-card>
+                            </v-card>-->
 
                         </v-col>
                     </v-row>
@@ -217,25 +217,28 @@
 
 <script>
   import axios from 'axios';
-
+  import slideOne from '../assets/slideone.png'
+  import slideTwo from '../assets/slidetwo.png'
+  import slideThree from '../assets/slidethree.png'
+  import slideFrontpage from '../assets/frontpage.png'
   export default {
     mounted() {
       this.fetchProducts()
     },
-    data: () => ({
+    data () { return {
       fruits: [],
       items: [
         {
-          src: '../assets/logo.png',
+          src: slideFrontpage,
         },
         {
-          src: '../assets/slideone.png',
+          src: slideOne,
         },
         {
-          src: '../slidetwo.png',
+          src: slideTwo,
         },
         {
-          src: '../slidethree.png',
+          src: slideThree,
         },
       ],
       items1: [
@@ -252,14 +255,16 @@
         'Blog',
         'Contact Us',
       ],
-    }),
+    }},
     methods: {
       fetchProducts() {
 
         axios.get('http://fruitshop.azurewebsites.net/api/fruits')
                 .then((data) => {
                   this.fruits = data.data;
-
+                  this.fruits.forEach(fruit => {
+                    fruit.imgUrl = 'https://samvirke.dk/sites/default/files/styles/image_component_large/public/migrated/Os/Ostkalorier_0.jpg.jpeg?itok=6SCyjucP'
+                  })
                 });
       }
     }

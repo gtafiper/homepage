@@ -121,7 +121,7 @@
     },
     data: () => ({
       fruits: [],
-      
+
       items1: [
         { title: 'Origin' },
         { title: 'Recipes' },
@@ -151,6 +151,82 @@
 </script>
 
 
-<style
+<style>
+@import url('https://fonts.googleapis.com/css?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+
+.container {
+    padding: 0 !important;
+}
+#header{
+    display: flex !important;
+    justify-content: center!important;
+    align-items: center !important;
+    background-color: #ff5c8d !important;
+}
+
+#logo, #menu, #cart{
+    display:flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#main-p1 {
+    display: flex !important;
+    justify-content: center !important;
+    background-color: blanchedalmond !important;
+}
+
+#productCont {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    width: 1400px !important;
+    margin: 0 auto 0 auto !important;
+    background-color: whitesmoke !important;
+}
+
+#tt1 {
+    text-decoration: none;
+    color: #FF9800;
+}
+
+#card1{
+    justify-content: center !important; 
+}
+
+#cardText li{
+    list-style-type: none !important;
+}
+
+#card_text p1 {
+    font-style: italic !important;
+    font-size: 14px !important;
+}
+
+#card_text p{
+    font-family: 'Muli', sans-serif !important;
+    font-size: 18px !important;
+}
+#buy-btn {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 10px !important;
+}
+
+#footer{
+    height:100px !important;
+    display: flex !important;
+    background-color: blueviolet !important;
+    width: 100% !important;
+}
+
+#about, #logo, #social{
+    display:flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
 </style>
