@@ -49,7 +49,7 @@
               <tbody>
                 <tr v-for="item in Fruits" :key="item.name">
                   <td>{{ item.items }}</td>
-                  <td>$ {{ item.price }}</td>
+                  <td> {{ item.price }}</td>
                   <td>{{ item.quantity }}</td>
                   <td>$ {{ item.total }}</td>
                 </tr>
@@ -57,14 +57,15 @@
             </template>
           </v-simple-table>
           <!-- Checkout etc -->
-          
-          <div class="my-2">
+          <div id="box-box-holder">
+              <v-spacer></v-spacer>
+          <div class="box">
             <v-btn id="shop" color="warning" dark>Continue Shopping</v-btn>
           </div>
-          <div class="my-2">
+          <div class="box">
             <v-btn id="checkout" color="warning" dark>Checkout</v-btn>
           </div>
-
+</div>
           <!-- Footer -->
 
           <v-footer color="primary lighten-1" padless>
@@ -109,52 +110,67 @@ export default {
     Fruits: [
       {
         items: "Dragon Fruit",
-        price: 20,
+        price: "$ " +20,
         quantity: 5,
         total: 100
       },
       {
         items: "Star Fruit",
-        price: 11,
+        price: "$ " + 11,
         quantity: 5,
         total: 55
       },
       {
         items: "Durian",
-        price: 41,
+        price: "$ " +  41,
         quantity: 3,
         total: 123
       },
       {
         items: "Kumquat",
-        price: 15,
+        price: "$ " + 15,
         quantity: 5,
         total: 100
       },
       {
         items: "Rambutan",
-        price: 6,
+        price: "$ " + 6,
         quantity: 10,
         total: 60
       },
       {
         items: "Guanabana",
-        price: 375,
+        price: "$ " + 375,
         quantity: 5,
         total: 1.875
       },
       {
         items: "Kumquat",
-        price: 15,
+        price: "$ " + 15,
         quantity: 6,
         total: 90
       },
       {
         items: "Durian",
-        price: 41,
+        price: "$ " + 41,
         quantity: 2,
         total: 82
-      }
+      },
+          {
+        items: "Durian",
+        price: "$ " + 15,
+        quantity: 2,
+        total: 30
+      },
+          {
+        items: "Durian",
+        price: "$ " + 41,
+        quantity: 2,
+        total: 82
+      },
+                {
+        total: 2597
+      },
     ]
   }),
   methods: {
@@ -170,6 +186,10 @@ export default {
 <style>
 .container {
   padding: 0 !important;
+}
+#box-box-holder {
+    display: flex;
+
 }
 #header {
   display: flex !important;
@@ -190,10 +210,19 @@ export default {
   justify-content: center;
 }
 
+.box{
+    margin: 15px;
+    margin-bottom: 50px;
+    display:
+}
+
 #shop, #checkout{
     width: 300px;
+    flex-flow: row wrap !important;
 
 }
+
+
 
 #footer {
   height: 100px !important;

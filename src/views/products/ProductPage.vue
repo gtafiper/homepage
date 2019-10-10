@@ -57,7 +57,7 @@
 
             <v-card id="card1" class="my-5 white lighten-1 black--text" height="450px" width="450px">
               <v-card-title>
-                <span class="display-1"></span>
+                <span class="display-1">aa</span>
               </v-card-title>
               <v-card-text id="cardText">
 
@@ -123,6 +123,7 @@
     },
     data: () => ({
       fruits: [],
+      messages: 0,
 
       items1: [
         { title: 'Origin' },
@@ -230,5 +231,8 @@
     display:flex !important;
     justify-content: center !important;
     align-items: center !important;
+}
+#cardText {
+    text-align: left
 }
 </style>

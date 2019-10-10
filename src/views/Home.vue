@@ -262,7 +262,7 @@
         axios.get('http://fruitshop.azurewebsites.net/api/fruits')
                 .then((data) => {
                   this.fruits = data.data;
-                 
+                  
                 });
       }
     }
