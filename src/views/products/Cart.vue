@@ -7,7 +7,7 @@
           <v-row id="header">
             <v-col cols="12" sm="2" id="logo">
               <div>
-                <img src height="45" width="56" alt />
+                <img src="https://media.discordapp.net/attachments/617964163179872276/632108359541325834/logo.png" height="45" width="56" alt />
               </div>
             </v-col>
             <v-col cols="12" sm="8" id="menu">

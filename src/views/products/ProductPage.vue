@@ -6,7 +6,7 @@
           <!-- fluid === full width design -->
           <v-row id="header">
             <v-col cols="12" sm="2" id="logo">
-                <div><img src="" height="45" width="56" alt="">
+                <div><img src="https://media.discordapp.net/attachments/617964163179872276/632108359541325834/logo.png" height="45" width="56" alt="">
                 </div>
             </v-col>
             <v-col cols="12" sm="8" id="menu">
@@ -213,7 +213,9 @@
 #buy-btn {
     display: flex !important;
     justify-content: center !important;
-    margin-bottom: 10px !important;
+    bottom: 0;
+    position: absolute;
+    margin-left: 59px;
 }
 
 #footer{
